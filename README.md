@@ -6,6 +6,11 @@
     add timestamp as below.
     
     ```hbs
+
     ?nc={{ now "%y%m%d%H%M" }}
+
+    // ?nc=1508071331
+
     ```
+
 
