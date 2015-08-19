@@ -137,19 +137,41 @@
 
 
 ## get Timestamp
-    - [handlevars helpers > dates > now](https://github.com/assemble/handlebars-helpers/blob/master/docs/helpers/dates/helper-now.md)
-    
-    add timestamp as below.
-    
-    ```hbs
 
-    ?nc={{ now "%y%m%d%H%M" }}
+[handlevars helpers > dates > now](https://github.com/assemble/handlebars-helpers/blob/master/docs/helpers/dates/helper-now.md)
 
-    // ?nc=1508071331
+- add timestamp as below.
 
-    ```
+```hbs
+?nc={{ now "%y%m%d%H%M" }}
+
+// ?nc=1508071331
+```
+
+
+## helper - repeat
+
+```zsh
+$ npm i handlebars-helper-repeat --save
+```
+
+```js:Gruntfile.js
+    assemble: {
+      site: {
+        options: {
+          helpers: [
+            'handlebars-helper-repeat'
+          }
+        }
+      }
+    },
+```
+
+[handlebars-helper-repeat@github](https://github.com/helpers/handlebars-helper-repeat)
+
 
 ## links
 
 - [official helpers](http://assemble.io/helpers/helpers-collections.html)
+
 
