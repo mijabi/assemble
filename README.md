@@ -1,13 +1,14 @@
 # assemble
 
-  ## Gruntfile.js
+## Gruntfile.js
 
-  ### 一般的な
+#### 一般的なやつ
+
 ```js:Gruntfile.js
     assemble: {
       site: {
         options: {
-          layoutdir: 'dev/assemble-layouts', // 各ページのyamlFMで指定するレイアウトファイル（layout:）設置場所のパス
+          layoutdir: 'dev/assemble-layouts', // 各ページのYFMで指定するレイアウトファイル（layout:）設置場所のパス
           data: ['dev/assemble-datas/**/*.{json,yml}'], // 各hbsファイルから変数として呼び出すファイル群の指定
           partials: ['src/includes/**/*.hbs'], // 各hbsファイルから呼び出すテンプレートhtml（.hbs）ファイルを指定
           flatten: false, // true にすると、生成するファイル群からディレクトリパスを削除？？
@@ -30,13 +31,13 @@
     },
 ```
 
-  ### 生成ファイルをjsonで指定（大量ファイル生成時とか）
+#### 生成ファイルをjsonで指定（大量ファイル生成時とか）
   
 ```js:Gruntfile.js
     assemble: {
       site: {
       options: {
-        layoutdir: 'src/layouts', // 各ページのyamlFMで指定するレイアウトファイル（layout:）設置場所のパス
+        layoutdir: 'src/layouts', // 各ページのYFMで指定するレイアウトファイル（layout:）設置場所のパス
         data: ['src/data/**/*.{json,yml}'], // 各hbsファイルから変数として呼び出すファイル群の指定
         partials: ['src/includes/**/*.hbs'], // 各hbsファイルから呼び出すテンプレートhtml（.hbs）ファイルを指定
         flatten: false, // true にすると、生成するファイル群からディレクトリパスを削除？？
@@ -48,8 +49,8 @@
 
 ```json:pages.json
 {
-  "en/s/trn/pf_hokkaido/index": {
-    "metadata": { // YMF に定義しておくのと同義になる？？？
+  "en/s/trn/pf_hokkaido/index": { // ファイルの生成パス
+    "metadata": { // YFM に定義しておくのと同義になる？？
       "h1": "Station Search [XXXXXXXX] - Restaurant Guide in Hokkaido",
       "canonical": "",
       "description": "Station Search [XXXXXXXX] - Restaurant Guide in Hokkaido.Restaurant search by Cuisines and Location, Station, Budget, Discount, Features. XXXXXXXX is All you need to plan travel and meal to Japan.",
@@ -114,7 +115,7 @@
 </html>
 ```
 
-  ### ファイル生成ディレクトリをキー側に指定することもできる
+#### ファイル生成ディレクトリをキー側に指定することもできる
 
 ```json:Gruntfile.js
     assemble: {
@@ -135,7 +136,7 @@
 ```
 
 
-  ## get Timestamp
+## get Timestamp
     - [handlevars helpers > dates > now](https://github.com/assemble/handlebars-helpers/blob/master/docs/helpers/dates/helper-now.md)
     
     add timestamp as below.
