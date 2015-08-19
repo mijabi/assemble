@@ -136,7 +136,7 @@
 ```
 
 
-## get Timestamp
+## helper - get Timestamp
 
 [handlevars helpers > dates > now](https://github.com/assemble/handlebars-helpers/blob/master/docs/helpers/dates/helper-now.md)
 
@@ -149,7 +149,7 @@
 ```
 
 
-## helper - repeat
+## helper - 単純な repeat
 
 ```zsh
 $ npm i handlebars-helper-repeat --save
@@ -168,6 +168,40 @@ $ npm i handlebars-helper-repeat --save
 ```
 
 [handlebars-helper-repeat@github](https://github.com/helpers/handlebars-helper-repeat)
+
+
+## custon-helper - 配列を each してる時に指定回数リピートする helper
+
+```js:custom-helper.js
+module.exports.register = function (Handlebars, options)  {
+  Handlebars.registerHelper("xtimes", function(index_count, mod, block) {
+    if(parseInt(index_count) % (mod) === 0){
+      return block.fn(this);
+    }
+  });
+};
+```
+
+```js:Gruntfile.js
+    assemble: {
+      site: {
+        options: {
+          helpers: [
+            'custom-helper.js'
+          }
+        }
+      }
+    },
+```
+
+```hbs
+<div class="triplet">
+{{# each list }}
+    {{#xtimes @index 3}}</div><div class="triplet">{{/xtimes}} // 配列の iterator が 3 の倍数の時だけ add
+{{/ each}}
+</div>
+```
+
 
 
 ## links
