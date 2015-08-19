@@ -202,6 +202,7 @@ module.exports.register = function (Handlebars, options)  {
 </div>
 ```
 
+[stackoverflow](http://stackoverflow.com/questions/17149289/how-can-i-add-a-hr-element-of-each-3-of-my-looping-array-using-handlebarsjs)
 
 
 ## links
