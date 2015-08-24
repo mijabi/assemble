@@ -208,5 +208,6 @@ module.exports.register = function (Handlebars, options)  {
 ## links
 
 - [official helpers](http://assemble.io/helpers/helpers-collections.html)
-
+- [c sheat](http://blog.dunckr.com/articles/assemble-javascript-static-site-generator/)
+- 
 
